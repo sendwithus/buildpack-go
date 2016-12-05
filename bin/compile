@@ -287,7 +287,8 @@ subdircount=`find ${build}/src/ -maxdepth 1 -type d | wc -l`
 if [ $subdircount -eq 3 ] # we want more directories, then ./, ../, and vendor/
 then
   step "Handling multiple executable build"
-  for i in `find ${build}/src -maxdepth 1  -type d ! -name vendor ! -name src` ; do
+  for i in `find ${build}/src -maxdepth 1  -type d ! -name vendor ! -name src`
+  do
     if [ $i ]
     go install -v "${FLAGS[@]}" ${pkgs}/$i 2>&1
   done
