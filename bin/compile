@@ -293,7 +293,7 @@ else
   step "Handling multiple executable build"
   for i in `find ${build}/src -maxdepth 1  -type d ! -name vendor ! -name src`
   do
-    go install -v "${FLAGS[@]}" ${pkgs}/$i 2>&1
+    go install -v "${FLAGS[@]}" ${pkgs}/$(basename $i) 2>&1
   done
 fi
 
