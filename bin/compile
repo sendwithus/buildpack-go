@@ -272,7 +272,7 @@ src="${GOPATH}/src/"
 step "doing pkgs next"
 #vendorJSON="${src}/vendor/vendor.json"
 #
-pkgs=${GO_INSTALL_PACKAGE_SPEC}
+pkgs=${GO_INSTALL_PACKAGE_SPEC} | xargs echo # remove whitespace
 #warnPackageSpecOverride
 #handleDefaultPkgSpec
 
