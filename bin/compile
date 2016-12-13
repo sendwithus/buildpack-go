@@ -283,8 +283,8 @@ massagePkgSpecForVendor
 
 step "Checking for multiple executables"
 
-subdircount=`find ${build}/src/ -maxdepth 1 -type d | wc -l`
-if [ $subdircount -eq 3 ] # we want more directories, then ./, ../, and vendor/
+subdircount=`find ${build}/src -maxdepth 1 -type d | wc -l`
+if [ $subdircount -eq 2 ] # we want more directories, then ./, ../, and vendor/
 then
   step "Handle single executable package"
   step "Running: go install -v ${FLAGS[@]} ${pkgs}"
