@@ -183,7 +183,7 @@ warnPackageSpecOverride() {
 
 source "${buildpack}/lib/common.sh"
 loadEnvDir "${env_dir}"
-determineTool
+setGoVersionFromEnvironment
 
 ver=$(expandVer $ver)
 url=${GOURL:-$(urlFor $ver)}
