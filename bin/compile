@@ -321,8 +321,8 @@ then
         echo 'export GOROOT=$HOME/.heroku/go' > "${build}/.profile.d/goroot.sh"
         echo 'PATH=$PATH:$GOROOT/bin' >> "${build}/.profile.d/goroot.sh"
     finished
-    step "Copying ${TOOL} binary"
-    cp $(which ${TOOL}) "${build}/bin"
+    #step "Copying ${TOOL} binary"
+    #cp $(which ${TOOL}) "${build}/bin"
 fi
 
 if test "${GO_SETUP_GOPATH_IN_IMAGE}" = "true"
